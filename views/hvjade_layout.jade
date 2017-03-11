@@ -1,0 +1,56 @@
+doctype
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')   
+    // stylesheet wichtig fürs design
+
+    link(rel='icon', type='image/ico', href='/images/favicon.ico')
+
+    script(src='/jsFrameworks/jquery-3.1.1.min.js', type='text/javascript')
+
+    block scripts
+  body
+  #main
+    div#header
+      p dhe
+      div.two-column
+        p tc
+        div.cell-left
+          p cl
+        div.cell-right
+          p cr
+
+    div#wrapper
+      p wrap
+      div.css-table
+        p ct
+        div.two-column-menu
+          p tcm
+          div.cell-left-menu
+            p clm
+            div#navigation
+              ul.toplevel
+
+                  li
+                    a(href="/Part1") PPart 1
+                  li
+                    a(href="/Part2") PPart 2 
+                  li
+                    a(href="/Part3") PPart 3 
+                  li
+                    a(href="/Part4") PPart 4 
+
+          div.cell-right-content
+            p crc
+            div.userinfo
+              h1 userinfo
+              block content
+    div#footer
+      p diffooter
+      div.css-table
+        p difcss-table
+        div.one-column
+          p difone-column
+          div.cell
+            p difcell

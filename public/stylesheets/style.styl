@@ -1,0 +1,470 @@
+@import "mixins/css3"
+
+/* Reset
+Based on http://meyerweb.com/eric/thoughts/2008/01/15/resetting-again/
+Removed elements not supported in HTML5
+-----------------------------------------------------------------------------*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strike, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td
+  margin 0
+  padding 0
+  border 0
+  outline 0
+  font-size 12px
+  vertical-align baseline
+
+
+th
+  padding 2px 2px 2px 4px
+
+td
+  padding 2px 2px 2px 4px
+
+thead tr td
+  font-weight bold
+
+/*
+Trigger the new block level elements in to the correct content flow
+-----------------------------------------------------------------------------*/
+article, aside, dialog, figure,
+footer, header, hgroup, menu,
+nav, section
+  display block
+
+/* Set up document
+-----------------------------------------------------------------------------*/
+body
+  font 12px  Helvetica, Arial, "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif
+  text-align center
+  background #000
+  background-image url('/images/ricepaper.png')
+
+#modal
+  overflow: hidden
+  display:    none
+  position:   fixed
+  z-index:    1000
+  top:        400
+  left:       400
+  height:     100%
+  width:      100%
+
+fieldset
+  border: 1px solid #C5D8E1
+  border-radius: 4px
+  background: white
+
+fieldset.warning
+  border: 2px solid red
+  border-radius: 4px
+  background: #fff
+
+fieldset.note
+  border: 2px solid blue
+  border-radius: 4px
+  background: #fff
+
+fieldset.overview
+  border: 1px solid #C5D8E1
+  border-radius: 4px
+  background: #fff
+  padding:8px
+  line-height:1.4
+
+#wrapper
+  width 920px
+  text-align left
+  margin-left auto
+  margin-right auto
+  background #FFFFFF
+  padding 5px 20px 10px 20px
+
+/* Nav Menu */
+
+#navigation
+  font-size 12px
+  width 150px
+  text-align center
+  margin-left auto
+  margin-right auto
+
+#navigation ul
+  margin 0
+  padding 0
+  width 100%
+  z-index 1000
+
+#navigation li
+  list-style  none
+
+#navigation ul.toplevel
+  background #ffffff/*d1d1d1*/
+  width 150px
+  text-align center
+  margin-left auto
+  margin-right auto
+
+
+
+#navigation ul.toplevel li
+  width 100%
+  background #fc9200
+  border-radius(5px)
+  margin-bottom 1px
+
+#navigation ul.toplevel li a
+  border-radius(5px)
+  color #000000/*fff*/
+  cursor pointer
+  display block
+  height 25px
+  line-height 25px
+  text-decoration none
+  width 100%
+  background #d1d1d1/*fc9200*/
+
+
+#navigation ul.toplevel li a:hover
+  background-color #1abbff/*db0d5f*/
+  color #fff
+  text-decoration underline
+  font-weight bold
+
+#navigation li:hover
+  position relative
+
+
+#navigation ul.sublevel
+  display none
+
+#navigation ul.toplevel li:hover ul.sublevel
+  border #fff solid
+  border-width 0px
+  display block
+  position absolute
+  left 150px
+  top 0px
+  display block
+
+#navigation ul.sublevel li
+  border none
+  float left
+  width 150px
+
+
+
+#navigation ul.toplevel li:hover ul.sublevel li a
+  background #999
+
+#navigation ul.toplevel li:hover ul.sublevel li a:hover
+  background-color #db0d5f
+
+
+
+#navigation ul.toplevel li ul.sublevel li ul.sublevel
+  display none
+
+
+#navigation ul.toplevel li ul.sublevel li:hover ul.sublevel
+  border #fff solid
+  border-width 0px
+  display block
+  position absolute
+  left 150px
+  top 0px
+  display block
+
+#navigation ul.toplevel li ul.sublevel li ul.sublevel li
+  border none
+  float left
+  width 150px
+
+
+#navigation ul.toplevel li ul.sublevel li:hover ul.sublevel li a
+  background #fc9200
+
+#navigation ul.toplevel li ul.sublevel li:hover ul.sublevel li a:hover
+  background-color #db0d5f
+
+/* End of Nav Menu */
+
+
+/* Horizontal Menu */
+
+#navigationh
+  font-size 12px
+  width 150px
+  text-align center
+  margin-left 0px
+
+#navigationh ul.horizontal
+  float left
+  width 690px
+  padding 0
+  margin 0
+  list-style-type none
+
+#navigationh ul.horizontal li
+  display inline
+
+#navigationh ul.horizontal li a
+  float left
+  width 120px
+  text-decoration none
+  color white
+  background-color #FC9200
+  border-radius 5px 5px 5px 5px
+  margin-right 1px
+  width 140px
+
+
+
+#navigationh ul.horizontal li a:hover
+  background-color #db0d5f
+
+/* End of Horizontal Menu */
+
+
+/* Typography
+-----------------------------------------------------------------------------*/
+@import "partials/typography"
+
+/* CSS Tables
+-----------------------------------------------------------------------------*/
+div#wrapper div.css-table
+  width 100%
+  display table
+
+div#wrapper div.css-table div.two-column-menu
+  display table-row
+
+div#wrapper div.css-table div.two-column-menu div.cell-left-menu
+  display table-cell
+  vertical-align top
+  width 100%
+  padding 5px
+  background #ffffff/*D7D3D2*/
+
+div#wrapper div.css-table div.two-column-menu div.cell-right-content
+  display table-cell
+  vertical-align top
+  width 100%
+  padding 10px
+  background #A0CFEC
+
+div#wrapper div.css-table div.two-column-menu div.cell-right-content div.userinfo
+  float right
+  width 100%
+
+div#wrapper div.css-table div.two-column-menu div.cell-right-content form
+  width 700px
+
+  .two-column
+    display table-row
+    .cell
+      display table-cell
+      vertical-align top
+      width 50%
+      *
+        width 90%
+  .three-column
+    display table-row
+    .cell
+      display table-cell
+      width 33.33333%
+      *
+        width 90%
+  .four-column
+    display table-row
+    .cell
+      display table-cell
+      width 25%
+  .one-column
+    display table-row
+    .cell
+      display table-cell
+      width 100%
+
+#warn
+  border: 1px solid #DDDDDD
+  background-color: rgba(255,0,150,0.25)
+  padding 5px
+
+#info
+  border: 1px solid #DDDDDD
+  background-color: rgba(0,0,255,0.2)
+  padding 5px
+
+#userheader
+  width: 100%
+  height: 20px
+
+
+#logoutheader
+  width: 100px
+
+#navh
+  display table
+  width 100%
+  padding-top 10px
+  padding-bottom 10px
+  font 12px  Helvetica, Arial, "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif
+
+#OverviewVersionTable
+  display table
+  width 100%
+  padding-top 10px
+  padding-bottom 10px
+  font 12px  Helvetica, Arial, "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif
+
+#OverviewVersionTable tbody tr td
+    width 100%
+    margin-right 0px
+
+#OverviewVersionTable tbody tr td.cell3
+    width 33%
+    margin-right 10px
+
+#OverviewVersionTable tbody tr td.cell2
+    width 50%
+    margin-right 10px
+
+#placeholderchart
+    clear both
+
+#SettingTable
+  display table
+  width 100%
+  padding-top 10px
+  padding-bottom 10px
+  font 12px  Helvetica, Arial, "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif
+
+#SettingTable tbody tr td.cell
+    vertical-align middle
+    padding-right 10px
+
+#SettingTable tbody tr td.cell img
+    width 30%
+    padding-right 10px
+
+#SettingTable tbody tr td.cell2
+    width 50%
+    padding-right 10px
+
+#demo-frame {
+    border: 0px solid #DDDDDD;
+    clear: right;
+    overflow: auto;
+    position: relative;
+    padding: 10px;
+}
+
+#addusertable
+  display table
+  width 100%
+  padding-top 10px
+  padding-bottom 10px
+  font 12px  Helvetica, Arial, "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif
+
+#addusertable tbody tr td.cell4
+    width 25%
+    padding-right 10px
+
+#addusertable tbody tr td.cell3
+    width 33%
+    padding-right 10px
+
+#addusertable tbody tr td.cell2
+    width 50%
+    padding-right 10px
+
+#addusertable tbody tr td.cell2left
+    width 20%
+    padding-right 10px
+
+#addusertable tbody tr td.cell2right
+    width 80%
+    padding-right 10px
+
+#logintable
+  display table
+  width 100%
+  padding-top 10px
+  padding-bottom 10px
+  font 12px Helvetica, Arial, "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif
+
+#logintable tbody tr td.cell2left
+    width 20%
+    padding-right 10px
+
+#logintable tbody tr td.cell2right
+    width 80%
+    padding-right 10px
+
+#slider.ui-slider
+    height: 40px;
+
+#slider.ui-slider a.ui-slider-handle
+    width: 30px;
+    height: 45px;
+
+#slider_IO.ui-slider
+    height: 40px;
+
+#slider_IO.ui-slider a.ui-slider-handle
+    width: 30px;
+    height: 45px;
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+div#header
+  background #FFFFFF
+  width 920px
+  margin-left auto
+  margin-right auto
+  margin-top 5px
+  padding 20px 20px 5px 20px
+  border-top-left-radius 15px
+  border-top-right-radius 15px
+
+div#header div.two-column
+  width 100%
+  display table
+  margin-left auto
+  margin-right auto
+  display table
+  text-align right
+
+div#header div.two-column div.cell-left
+  display table-cell
+  vertical-align top
+  text-align left
+
+div#header div.two-column div.cell-right
+  display table-cell
+  vertical-align top
+
+/* Footer
+-----------------------------------------------------------------------------*/
+div#footer
+  background #FFFFFF
+  width 920px
+  margin-left auto
+  margin-right auto
+  padding 20px
+  border-bottom-left-radius 15px
+  border-bottom-right-radius 15px
+  text-align left
+  ul
+    list-style none
+
+
+

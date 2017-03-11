@@ -1,0 +1,56 @@
+doctype
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/teststyle.css')   
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')   
+
+    link(rel='icon', type='image/ico', href='/images/favicon.ico')
+    script(src='/jsFrameworks/jquery-3.1.1.min.js', type='text/javascript')
+
+
+    block scripts
+
+  body
+  #main
+  #tablecontainer
+    #header
+      #headerleft 
+        div header left
+      #headerright
+        div headerright
+    #content
+      #contentleft
+        div contentleft
+          .container-fluid
+            .row
+              .col-sm-3.col-md-2.sidebar
+                ul.nav.nav-sidebar
+                  li.active
+                    a(href='#')
+                      | Overview 
+                      span.sr-only (current)
+                  li
+                    a(href='#') Reports
+                  li
+                    a(href='#') Analytics
+                  li
+                    a(href='#') Export
+
+
+
+
+      #contentright
+        div contentright
+    #footer
+      #footerleft
+        div footer
+      #footerright
+        div footerright
+
+
+block scripts
+  script(type='text/javascript', language='javascript')
+   $(function() {
+     
+   })

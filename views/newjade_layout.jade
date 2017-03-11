@@ -1,0 +1,48 @@
+doctype
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/newstyle.css')   
+    // stylesheet wichtig fürs design
+    link(rel='icon', type='image/ico', href='/images/favicon.ico')
+    script(src='/jsFrameworks/jquery-3.1.1.min.js', type='text/javascript')
+    block scripts
+
+  body
+  #main
+    div#header
+      div.three-column
+        div.cell-left
+          p left
+        div.cell-middle
+          p middle
+        div.cell-right
+          p right
+
+
+    #container
+      #content
+        div content
+          p new content
+
+    div#wrapper
+      div.css-table
+        div.two-column-menu
+          div.cell-left-menu
+            p menu
+          div.cell-right-content
+            p cc-content
+
+    div#footer
+        div.two-column
+          div.cell-left-footer
+            p left
+          div.cell-right-footer
+            p right
+
+
+block scripts
+  script(type='text/javascript', language='javascript')
+   $(function() {
+     
+   })
