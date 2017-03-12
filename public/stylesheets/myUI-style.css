@@ -26,7 +26,12 @@
   --footerhintergrundfarbe: #c32e04;
   --linkfarbe: #09c;
 }
-
+/* 
+h1 {
+  color: var(--hauptfarbe);
+  border-bottom: 1px solid var(--akzentfarbe);
+}
+*/
 body {
     margin-top: 100px;
     background-color: darkred;
