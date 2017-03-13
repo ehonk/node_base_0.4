@@ -8,23 +8,23 @@
 
 /* Red */
 :root {
-  --contenthintergrundfarbe: #FFCCFF;
-  --contentelementhgfarbe: #E5FFCC;
+  --contenthintergrundfarbe: #ffffff;
+  --contentelementhgfarbe: #eef1f5;
  
-  --navtophintergrundfarbe: #C4D813;
+  --navtophintergrundfarbe: #2a3643;
   --navtopElementSelected: #3e4b5d;
   --navtopElementHover: #3e4b5d;
   --navtoptextfarbeaktiv: #f1f1f1;
   --navtoptextfarbe: #E0E0E0;
 
-  --navsidebarhintergrundfarbe: #D5702C;
+  --navsidebarhintergrundfarbe: #364151;
   --navsidebartextfarbeaktiv: #f1f1f1;
   --navsidebartextfarbeHover: #B266FF;  
-  --navsidebartextfarbe: #B266FF;
-  --navsideElementSelected: #3e4b5d;
-  --navSideElementHover: yellow;
+  --navsidebartextfarbe: #f1f1f1;
+  --navsideElementSelected: #202935;
+  --navSideElementHover: #3d4a5c;
 
-  --footerhintergrundfarbe: #c32e04;
+  --footerhintergrundfarbe: #eef1f5;
   --linkfarbe: #09c;
 }
 /* 
@@ -80,6 +80,7 @@ body {
 .top-nav>li {
     display: inline-block;
     float: left;
+
 }
 
 .top-nav>li>a {
@@ -95,7 +96,7 @@ body {
 .top-nav>.open>a:hover,
 .top-nav>.open>a:focus {
     color: #fff;
-    background-color: #000;
+    background-color: var(--navtopElementHover);
 }
 
 .top-nav>.open>.dropdown-menu {
@@ -158,20 +159,42 @@ ul.alert-dropdown {
         color: var(--navsidebartextfarbe);
     }
 
+    /* Button Elemente Hintergrund*/
     .side-nav>li>a {
         width: 225px;
-        color: var(--navsidebartextfarbe);
+        color: var(-var(--navsidebarhintergrundfarbe)); 
+
+    }
+
+    .side-nav li a:active {
+    color:darkred;
+    background-color: red;
     }
 
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
-        background-color: var(--navtopElementHover) !important;
+        background-color: var(--navSideElementHover) !important;
     }
+
+    /*aktives Side Element */
+    .navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: var(--navsidebartextfarbeaktiv);
+  background-color: var(--navsideElementSelected);
 }
+
+
+
+
+
+}
+
 
 .side-nav>li>ul {
     padding: 0;
+    
 }
 
 .side-nav>li>ul>li>a {
@@ -183,6 +206,7 @@ ul.alert-dropdown {
 
 .side-nav>li>ul>li>a:hover {
     color: #fff;
+    
 }
 
 
