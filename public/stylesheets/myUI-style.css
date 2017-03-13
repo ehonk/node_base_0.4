@@ -8,33 +8,34 @@
 
 /* Red */
 :root {
-  --contenthintergrundfarbe: #eef1f5;
-  --contentelementhgfarbe: #ffffff;
+  --contenthintergrundfarbe: #FFCCFF;
+  --contentelementhgfarbe: #E5FFCC;
  
-  --navtophintergrundfarbe: #2a3543;
+  --navtophintergrundfarbe: #C4D813;
   --navtopElementSelected: #3e4b5d;
   --navtopElementHover: #3e4b5d;
   --navtoptextfarbeaktiv: #f1f1f1;
-  --navtoptextfarbe: #b5a598;
+  --navtoptextfarbe: #E0E0E0;
 
-  --navsidebarhintergrundfarbe: #364151;
+  --navsidebarhintergrundfarbe: #D5702C;
   --navsidebartextfarbeaktiv: #f1f1f1;
-  --navsidebartextfarbe: #b5a598;
+  --navsidebartextfarbeHover: #B266FF;  
+  --navsidebartextfarbe: #B266FF;
   --navsideElementSelected: #3e4b5d;
-  --navSideElementHover: #3e4b5d;
+  --navSideElementHover: yellow;
 
   --footerhintergrundfarbe: #c32e04;
   --linkfarbe: #09c;
 }
 /* 
 h1 {
-  color: var(--hauptfarbe);
+  color: var(--navtophintergrundfarbe);
   border-bottom: 1px solid var(--akzentfarbe);
 }
 */
 body {
     margin-top: 100px;
-    background-color: darkred;
+    background-color: var(--contenthintergrundfarbe);
 }
 
 @media(min-width:768px) {
@@ -45,12 +46,13 @@ body {
 
 #wrapper {
     padding-left: 0;
+
 }
 
 #page-wrapper {
     width: 100%;
     padding: 0;
-    background-color: #fff;
+    background-color: var(--contenthintergrundfarbe);
 }
 
 .huge {
@@ -72,7 +74,7 @@ body {
 
 .top-nav {
     padding: 0 15px;
-    background-color: green;
+    background-color: var(--navtophintergrundfarbe);;
 }
 
 .top-nav>li {
@@ -84,7 +86,7 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
     line-height: 20px;
-    color: #999;
+    color: var(--navtoptextfarbe);
 }
 
 .top-nav>li>a:hover,
@@ -149,20 +151,22 @@ ul.alert-dropdown {
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        background-color: green;
+        background-color: var(--navsidebarhintergrundfarbe);
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
+        color: var(--navsidebartextfarbe);
     }
 
     .side-nav>li>a {
         width: 225px;
+        color: var(--navsidebartextfarbe);
     }
 
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
-        background-color:yellow !important;
+        background-color: var(--navtopElementHover) !important;
     }
 }
 
@@ -174,24 +178,13 @@ ul.alert-dropdown {
     display: block;
     padding: 10px 15px 10px 38px;
     text-decoration: none;
-    color: #999;
+    color: var(--navsidebartextfarbe);
 }
 
 .side-nav>li>ul>li>a:hover {
     color: #fff;
 }
 
-/* Flot Chart Containers */
-
-.flot-chart {
-    display: block;
-    height: 400px;
-}
-
-.flot-chart-content {
-    width: 100%;
-    height: 100%;
-}
 
 /* Custom Colored Panels */
 
@@ -253,26 +246,30 @@ ul.alert-dropdown {
     color: #df8a13;
 }
 
+
+/* Footer */
+
+
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #f5f5f5;
+  background-color: var(--footerhintergrundfarbe);
 }
 
 .navbar-inverse {
-    color:red;
-    background-color: blue;
+    color:var(--navtoptextfarbe);
+    background-color: var(--navtophintergrundfarbe);
     border-color: #E7E7E7;
 }
 .navbar-default .navbar-brand {
-    color:red;
-    background-color: blue;
+    color:var(--navtoptextfarbe);
+    background-color: var(--navtophintergrundfarbe);
 }
 
 .navbar-inverse .navbar-brand {
-    color:red;
-    background-color: blue;
+    color:var(--navtoptextfarbe);
+    background-color: var(--navtophintergrundfarbe);
 }
