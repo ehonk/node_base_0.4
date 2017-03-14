@@ -104,13 +104,19 @@ module.exports = function (app) {
         res.sendfile('./views/bs_dashboard_index.html'); // load the single view file (angular will handle the page changes on the front-end)
     }); 
 
-
-
     // bs_admin_index
     app.get('/bs_myUI_index', function (req, res) {
         console.log("< Info > GET bs_admin_index");
         res.sendfile('./views/bs_myUI_index.html'); // load the single view file (angular will handle the page changes on the front-end)
     }); 
+
+    // bs_admin_index
+    app.get('/bs_myUI_jdindex', function (req, res) {
+        console.log("< Info >  GET /newjade RENDER");
+        res.render('bs_myUI_jdindex',
+            { title: 'bs_myUI_jdindex' }
+        )
+    })
 
     // bs_min
     app.get('/bs_min', function (req, res) {
