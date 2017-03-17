@@ -131,13 +131,18 @@ module.exports = function (app) {
         res.sendfile('./views/index.html'); // load the single view file (angular will handle the page changes on the front-end)
     }); 
 
-app.get('/pugindex', function (req, res) {
-  res.render('pugindex', { title: 'Hey', message: 'Hello there!' })
-})
+    app.get('/pugindex', function (req, res) {
+    	res.render('pugindex', { title: 'Hey', message: 'Hello there!' })
+    })
 
-app.get('/bs_myUI_pugindex', function (req, res) {
-  res.render('bs_myUI_pugindex', { title: 'Hey', message: 'Hello there!' })
-})
-
+	app.get('/bs_myUI_pugindex', function (req, res) {
+	  res.render('bs_myUI_pugindex', { title: 'Hey', message: 'Hello there!' })
+	})
+	
+    // bs_myUI_jqueryindex
+    app.get('/bs_myUI_jqueryindex', function (req, res) {
+        console.log("< Info > GET Slash Call");
+        res.sendfile('./views/bs_myUI_jqueryindex.html'); // load the single view file (angular will handle the page changes on the front-end)
+    }); 
 };
 
