@@ -47,13 +47,50 @@ module.exports = function (app) {
     app.get('/api/todos', function (req, res) { console.log("< Info >  GET /api/todos"); });
 
 
-    // HTML Single page
-    app.get('/single', function (req, res) {       // This will load the single index.html file when we hit localhost:8080
+    // ############ pure html send ############
+    // bs_min
+    app.get('/bs_min', function (req, res) {
         console.log("< Info > GET Slash Call");
-        res.sendfile('./views/single.html'); // load the single view file (angular will handle the page changes on the front-end)
-    });
+        res.sendfile('./views/others/bs_min.html'); // load the single view file (angular will handle the page changes on the front-end)
+    }); 
 
-   // JSimple Jade Teil
+    // bs_dashboard_index
+    app.get('/bs_dashboard_index', function (req, res) {
+        console.log("< Info > GET Slash Call");
+        res.sendfile('./views/others/bs_dashboard_index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    }); 
+
+    // bs_theme_index
+    app.get('/bs_theme_index', function (req, res) {
+        console.log("< Info > GET Slash Call");
+        res.sendfile('./views/others/bs_theme_index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    }); 
+
+    // mein UI als pure html
+    app.get('/bs_myUI_index', function (req, res) {
+        console.log("< Info > GET bs_admin_index");
+        res.sendfile('./views/others/bs_myUI_index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    }); 
+
+
+    // ######## jade / puge testings ####
+    // Test Jade Clean Website
+    app.get('/testjade', function (req, res) {
+        console.log("< Info >  GET /newjade RENDER");
+        res.render('jadepug/testjade',
+            { title: 'Home' }
+        )
+    })
+
+    // Simple HV Jade Rebuild
+    app.get('/hvjade', function (req, res) {
+        console.log("< Info >  GET /hvjade RENDER");
+        res.render('jadepug/hvjade_index',
+            { title: 'Home' }
+        )
+    })
+
+    // Jade simple Page header and content
     app.get('/simplejade', function (req, res) {
         console.log("< Info >  GET /simplejade RENDER");
         res.render('simplejade_index',
@@ -61,88 +98,52 @@ module.exports = function (app) {
         )
     })
 
-    // Hydro Jade Teil
-    app.get('/hvjade', function (req, res) {
-        console.log("< Info >  GET /hvjade RENDER");
-        res.render('hvjade_index',
-            { title: 'Home' }
-        )
-    })
-
-    // New Jade Interface
-    app.get('/newjade', function (req, res) {
-        console.log("< Info >  GET /newjade RENDER");
-        res.render('newjade_layout',
-            { title: 'Home' }
-        )
-    })
-
-    // New Jade Interface
-    app.get('/bootstrap', function (req, res) {
-        console.log("< Info > GET Slash Call");
-        res.sendfile('./views/bootstrap.html'); // load the single view file (angular will handle the page changes on the front-end)
-    });  
-
-    // New Jade Interface
-    app.get('/testjade', function (req, res) {
-        console.log("< Info >  GET /newjade RENDER");
-        res.render('testjade',
-            { title: 'Home' }
-        )
-    })
-
-
-    // bs_theme_index
-    app.get('/bs_theme_index', function (req, res) {
-        console.log("< Info > GET Slash Call");
-        res.sendfile('./views/bs_theme_index.html'); // load the single view file (angular will handle the page changes on the front-end)
-    }); 
-
-    // bs_dashboard_index
-    app.get('/bs_dashboard_index', function (req, res) {
-        console.log("< Info > GET Slash Call");
-        res.sendfile('./views/bs_dashboard_index.html'); // load the single view file (angular will handle the page changes on the front-end)
-    }); 
-
-    // bs_admin_index
-    app.get('/bs_myUI_index', function (req, res) {
-        console.log("< Info > GET bs_admin_index");
-        res.sendfile('./views/bs_myUI_index.html'); // load the single view file (angular will handle the page changes on the front-end)
-    }); 
-
-    // bs_admin_index
-    app.get('/bs_myUI_jdindex', function (req, res) {
-        console.log("< Info >  GET /newjade RENDER");
-        res.render('bs_myUI_jdindex',
-            { title: 'bs_myUI_jdindex' }
-        )
-    })
-
-    // bs_min
-    app.get('/bs_min', function (req, res) {
-        console.log("< Info > GET Slash Call");
-        res.sendfile('./views/bs_min.html'); // load the single view file (angular will handle the page changes on the front-end)
-    }); 
-
-
     // New Jade Interface
     app.get('/index', function (req, res) {
         console.log("< Info > GET Slash Call");
         res.sendfile('./views/index.html'); // load the single view file (angular will handle the page changes on the front-end)
     }); 
 
+
     app.get('/pugindex', function (req, res) {
-    	res.render('pugindex', { title: 'Hey', message: 'Hello there!' })
+    	res.render('jadepug/pugindex', { title: 'Hey', message: 'Hello there!' })
     })
 
-	app.get('/bs_myUI_pugindex', function (req, res) {
-	  res.render('bs_myUI_pugindex', { title: 'Hey', message: 'Hello there!' })
-	})
-	
-    // bs_myUI_jqueryindex
+        // mein UI als Jade
+    app.get('/bs_myUI_jdindex', function (req, res) {
+        console.log("< Info >  GET /newjade RENDER");
+        res.render('jadepug/bs_myUI_jdindex',
+            { title: 'bs_myUI_jdindex' }
+        )
+    })
+
+        // mein UI als Jade mit jquery nachload
     app.get('/bs_myUI_jqueryindex', function (req, res) {
         console.log("< Info > GET Slash Call");
-        res.sendfile('./views/bs_myUI_jqueryindex.html'); // load the single view file (angular will handle the page changes on the front-end)
+        res.sendfile('./views/jadepug/bs_myUI_jqueryindex.html'); // load the single view file (angular will handle the page changes on the front-end)
     }); 
+
+
+    // ######## Pug UI  ########
+	app.get('/bs_myUI_pug_about', function (req, res) {
+	  res.render('pugUI/bs_myUI_pug_about', { title: 'Hey', message: 'Hello there!' })
+	})
+
+	app.get('/bs_myUI_pugindex', function (req, res) {
+	  res.render('pugUI/bs_myUI_pugindex', { title: 'Hey', message: 'Hello there!' })
+	})
+
+	app.get('/bs_myUI_pug_ajax', function (req, res) {
+	  res.render('pugUI/bs_myUI_pug_ajax', { title: 'Hey', message: 'Hello there!' })
+	})
+
+	app.get('/bs_myUI_pug_post', function (req, res) {
+	  res.render('pugUI/bs_myUI_pug_post', { title: 'Hey', message: 'Hello there!' })
+	})
+
+    app.get('/bs_myUI_pug_mongoose', function (req, res) {
+	  res.render('pugUI/bs_myUI_pug_mongoose', { title: 'Hey', message: 'Hello there!' })
+	})
+
 };
 

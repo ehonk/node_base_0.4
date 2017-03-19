@@ -1,4 +1,3 @@
-
 // server.js (new)
 // set up ======================================================================
 var express = require('express');
@@ -20,8 +19,8 @@ var ndDummy = require('./app/ndDummy');            // load the MongoLogger
 
 
     //app.set('views', __dirname + '/views');
-    //app.set('view engine', 'pug');
-    app.set('view engine', 'jade');
+    app.set('view engine', 'pug');
+    //app.set('view engine', 'jade');
     app.set('view options',{layout:false});
 
 
@@ -41,7 +40,6 @@ mLogger.writeLog("Start me up");
 
 /**
  * @param {string } tripple
-
  * This is a description of the foo function. */
 function foo(tripple) {
 }

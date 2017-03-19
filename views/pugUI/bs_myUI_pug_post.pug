@@ -1,0 +1,51 @@
+extend bs_myUI_puglayout
+block content
+
+
+  .col-lg-12
+    h1.page-header
+      | Page save by post 
+      small Statistics Overview
+    ol.breadcrumb
+      li.active
+        i.fa.fa-dashboard
+          form(action='/extras', method='post', enctype="multipart/form-data")
+            input#objhidden(type='hidden',  name='submitfrom', value='')
+
+            table
+              tr
+                td(style='width:200px;') content A
+                td
+                  input(type='text',  name='', id='', value='')
+              tr
+                td(style='width:200px;') content B
+                td
+                  input(type='text',  name='', id='', value='')
+              tr
+                td(style='width:200px;') content C
+                td
+                  input(type='text',  name='', id='', value='')
+              tr
+                td(style='width:200px;') content D
+                td
+                  input(type='text',  name='', id='', value='')
+              tr
+                td(style='width:200px;') content E
+                td
+                  input(type='text',  name='', id='', value='')
+
+            table(style='border-collapse:collapse;')
+              tr
+                td(style='width:200px;')
+                td(style='width:200px;')
+                  div(style='float:right;margin-top:15px')
+                    input#objbutton_post(type='button',  value='apply', name='submitlogging', style='width:150px')
+
+  block scripts
+    script(type='text/javascript', language='javascript')
+
+//- block scripts
+  script(type='text/javascript', language='javascript')
+        $(function() {
+          loadpage_post();
+        })

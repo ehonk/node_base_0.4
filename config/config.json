@@ -1,0 +1,17 @@
+{
+    "Overview": {
+        "language": "English",
+        "location": "42",
+        "serialno": "QEP - 007",
+        "type": "Q-Eye PSC MT",
+        "checkUserForms": 1,
+        "isKanalisDual": 0,
+        "AjaxTimeOut": 1000,
+        "LastModified": null,
+        "NumPSCSensor" : 2
+    },
+    "TCPSocket": {
+        "Host": "127.0.0.1",
+        "Port": "20000"
+    }
+}
