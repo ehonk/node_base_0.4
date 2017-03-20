@@ -6,6 +6,11 @@
 var Todo = require('../models/todo');
 var mLogger = require('../app/mongoLogger');            // load the MongoLogger
 
+var conjson;
+//var contentfile = __dirname + '/data/data.json';
+var contentfile = '/home/pi/coding_node/node_base_0.4/data/data.json';
+
+var fs = require('fs');
 // expose the routes to our app with module.exports
 module.exports = function (app) {
 
@@ -138,12 +143,16 @@ module.exports = function (app) {
 	})
 
 	app.get('/bs_myUI_pug_post', function (req, res) {
-	  res.render('pugUI/bs_myUI_pug_post', { title: 'Hey', message: 'Hello there!' })
+        conjson = JSON.parse(fs.readFileSync(contentfile).toString());
+	  res.render('pugUI/bs_myUI_pug_post', { title: 'Hey', message: 'Hello there!', conobj : conjson })
 	})
 
     app.get('/bs_myUI_pug_mongoose', function (req, res) {
 	  res.render('pugUI/bs_myUI_pug_mongoose', { title: 'Hey', message: 'Hello there!' })
 	})
 
+
+    app.post('/sendpostdata', console.log ("sendpostdata" ) );
+//
 };
 

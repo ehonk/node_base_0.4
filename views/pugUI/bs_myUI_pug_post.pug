@@ -1,4 +1,6 @@
 extend bs_myUI_puglayout
+extends layout
+
 block content
 
 
@@ -9,30 +11,30 @@ block content
     ol.breadcrumb
       li.active
         i.fa.fa-dashboard
-          form(action='/extras', method='post', enctype="multipart/form-data")
+          form(action='/sendpostdata', method='post', enctype="multipart/form-data")
             input#objhidden(type='hidden',  name='submitfrom', value='')
 
             table
               tr
                 td(style='width:200px;') content A
                 td
-                  input(type='text',  name='', id='', value='')
+                  input(type='text',  name='', id='', value=conobj.PagePost.contentA)
               tr
                 td(style='width:200px;') content B
                 td
-                  input(type='text',  name='', id='', value='')
+                  input(type='text',  name='', id='', value=conobj.PagePost.contentB)
               tr
                 td(style='width:200px;') content C
                 td
-                  input(type='text',  name='', id='', value='')
+                  input(type='text',  name='', id='', value=conobj.PagePost.contentC)
               tr
                 td(style='width:200px;') content D
                 td
-                  input(type='text',  name='', id='', value='')
+                  input(type='text',  name='', id='', value=conobj.PagePost.contentD)
               tr
                 td(style='width:200px;') content E
                 td
-                  input(type='text',  name='', id='', value='')
+                  input(type='text',  name='', id='', value=conobj.PagePost.contentE)
 
             table(style='border-collapse:collapse;')
               tr
@@ -42,7 +44,9 @@ block content
                     input#objbutton_post(type='button',  value='apply', name='submitlogging', style='width:150px')
 
   block scripts
-    script(type='text/javascript', language='javascript')
+    script(type="text/javascript").
+      alert("Jquery Version: " + jQuery.fn.jquery );
+
 
 //- block scripts
   script(type='text/javascript', language='javascript')

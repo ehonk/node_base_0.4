@@ -1,9 +1,11 @@
+	alert ("preload");
 function loadpage_post() {
 
-    $("#objbutton_post").click(function(){
-
 	alert ("Done");
-      //$("#objhidden").val("buttonHardware");
+    $("#objbutton_post").click(function(){
+	alert ("Done");
+
+      //$("#objhidden").val("buttonpost");
       //$("form").submit();
 
     });
