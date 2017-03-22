@@ -1,5 +1,5 @@
 extend bs_myUI_puglayout
-extends layout
+
 
 block content
 
@@ -18,23 +18,23 @@ block content
               tr
                 td(style='width:200px;') content A
                 td
-                  input(type='text',  name='', id='', value=conobj.PagePost.contentA)
+                  input(type='text',  name='contentA', id='contentA', value=conobj.PagePost.contentA)
               tr
                 td(style='width:200px;') content B
                 td
-                  input(type='text',  name='', id='', value=conobj.PagePost.contentB)
+                  input(type='text',  name='contentB', id='contentB', value=conobj.PagePost.contentB)
               tr
                 td(style='width:200px;') content C
                 td
-                  input(type='text',  name='', id='', value=conobj.PagePost.contentC)
+                  input(type='text',  name='contentC', id='contentC', value=conobj.PagePost.contentC)
               tr
                 td(style='width:200px;') content D
                 td
-                  input(type='text',  name='', id='', value=conobj.PagePost.contentD)
+                  input(type='text',  name='contentD', id='contentD', value=conobj.PagePost.contentD)
               tr
                 td(style='width:200px;') content E
                 td
-                  input(type='text',  name='', id='', value=conobj.PagePost.contentE)
+                  input(type='text',  name='contentE', id='contentE', value=conobj.PagePost.contentE)
 
             table(style='border-collapse:collapse;')
               tr
@@ -45,8 +45,7 @@ block content
 
   block scripts
     script(type="text/javascript").
-      alert("Jquery Version: " + jQuery.fn.jquery );
-
+      $(function() { loadpage_post();  })
 
 //- block scripts
   script(type='text/javascript', language='javascript')

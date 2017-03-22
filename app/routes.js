@@ -39,6 +39,8 @@ module.exports = function (app) {
 
     app.post('/Ajax_getLogs', mLogger.getCompleteLog);
 
+
+
     // application -------------------------------------------------------------
 
     // HTML Teil
@@ -151,8 +153,14 @@ module.exports = function (app) {
 	  res.render('pugUI/bs_myUI_pug_mongoose', { title: 'Hey', message: 'Hello there!' })
 	})
 
+    app.post('/sendpostdata', function (req, res) {
+        console.log ("sendpostdata" ) 
+        console.log ("contentA: " + req.body.contentA ) ;
+        console.log ("contentB: " + req.body.contentB );
+        res.redirect("back");
+    });
 
-    app.post('/sendpostdata', console.log ("sendpostdata" ) );
+   // 
 //
 };
 
