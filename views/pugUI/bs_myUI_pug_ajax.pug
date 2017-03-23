@@ -9,8 +9,37 @@ block content
     ol.breadcrumb
       li.active
         i.fa.fa-dashboard
-        |  Dashboard
+          form(action='/sendpostdata', method='post')
+            input#objhidden(type='hidden',  name='submitfrom', value='')
 
+            table
+              tr
+                td(style='width:200px;') content A
+                td
+                  input(type='text',  name='contentA', id='contentA', value=conobj.PageAjax.contentA)
+              tr
+                td(style='width:200px;') content B
+                td
+                  input(type='text',  name='contentB', id='contentB', value=conobj.PageAjax.contentB)
+              tr
+                td(style='width:200px;') content C
+                td
+                  input(type='text',  name='contentC', id='contentC', value=conobj.PageAjax.contentC)
+              tr
+                td(style='width:200px;') content D
+                td
+                  input(type='text',  name='contentD', id='contentD', value=conobj.PageAjax.contentD)
+              tr
+                td(style='width:200px;') content E
+                td
+                  input(type='text',  name='contentE', id='contentE', value=conobj.PageAjax.contentE)
+
+            table(style='border-collapse:collapse;')
+              tr
+                td(style='width:200px;')
+                td(style='width:200px;')
+                  div(style='float:right;margin-top:15px')
+                    input#objbutton_ajax(type='button',  value='apply', name='submitlogging', style='width:150px')
 
   block scripts
     script(type="text/javascript").

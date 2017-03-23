@@ -141,7 +141,8 @@ module.exports = function (app) {
 	})
 
 	app.get('/bs_myUI_pug_ajax', function (req, res) {
-	  res.render('pugUI/bs_myUI_pug_ajax', { title: 'Hey', message: 'Hello there!' })
+        conjson = JSON.parse(fs.readFileSync(contentfile).toString());
+	  res.render('pugUI/bs_myUI_pug_ajax', { title: 'Hey', message: 'Hello there!' , conobj : conjson })
 	})
 
 	app.get('/bs_myUI_pug_post', function (req, res) {
@@ -160,7 +161,19 @@ module.exports = function (app) {
         res.redirect("back");
     });
 
+    app.post('/Ajax_RequestJSONElement', Ajax_RequestJSONElement);
    // 
 //
 };
 
+function Ajax_RequestJSONElement(req,res)
+{
+    console.log("# serverajaxcalls::Ajax_RequestJSONElement : " + req.body.REQUEST);
+
+    //var dataSection = paramscode.findlevel1(req.body.REQUEST);
+
+    res.contentType('json');
+    //res.send({ data: dataSection });
+    res.send({ data: "Done" });
+
+}
