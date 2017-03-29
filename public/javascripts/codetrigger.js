@@ -1,5 +1,5 @@
 
-function loadpage_trigger() {
+function loadpage_highchart() {
 
 	alert ("loadpage_post Done");
     $("#objbutton_post").click(function(){
