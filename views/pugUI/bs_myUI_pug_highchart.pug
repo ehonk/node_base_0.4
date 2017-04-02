@@ -1,0 +1,16 @@
+extend bs_myUI_puglayout
+block content
+
+
+  .col-lg-12
+    h1.page-header
+      | show Highchart
+      small Statistics Overview
+    ol.breadcrumb
+      li.active
+        i.fa.fa-dashboard
+        |  Dashboard
+
+  block scripts
+    script(type="text/javascript").
+      $(function() { loadpage_highchart();  })

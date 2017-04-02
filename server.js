@@ -12,7 +12,7 @@ var methodOverride = require('method-override'); // simulate DELETE and PUT (exp
 var database = require('./config/database');            // load the database config
 var mLogger = require('./app/mongoLogger');            // load the MongoLogger
 var ndDummy = require('./app/ndDummy');            // load the MongoLogger
-
+var ndtrigger = require('./app/triggers');            // load the MongoLogger
 
 
 // configuration ===============================================================

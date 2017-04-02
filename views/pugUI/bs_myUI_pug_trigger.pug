@@ -9,7 +9,27 @@ block content
     ol.breadcrumb
       li.active
         i.fa.fa-dashboard
-        |  Dashboard
+          form(action='/sendpostdata', method='post')
+            input#objhidden(type='hidden',  name='submitfrom', value='')
+
+            table
+              tr
+                td(style='width:200px;') content A
+                td
+                  input(type='text',  name='contentA', id='contentA', value='')
+
+
+            table(style='border-collapse:collapse;')
+              tr
+                td(style='width:200px;')
+                td(style='width:200px;')
+                  div(style='float:right;margin-top:15px')
+                    input#objbtn_ajaxtrig(type='button',  value='Ajax Trigger', name='submitlogging', style='width:150px')
+              tr
+                td(style='width:200px;')
+                td(style='width:200px;')
+                  div(style='float:right;margin-top:15px')
+                    input#objbtn_nodetrig(type='button',  value='Node Trigger', name='submitlogging', style='width:150px')
 
   block scripts
     script(type="text/javascript").

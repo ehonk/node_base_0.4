@@ -154,6 +154,10 @@ module.exports = function (app) {
 	  res.render('pugUI/bs_myUI_pug_mongoose', { title: 'Hey', message: 'Hello there!' })
 	})
 
+    app.get('/bs_myUI_pug_trigger', function (req, res) {
+	  res.render('pugUI/bs_myUI_pug_trigger', { title: 'Hey', message: 'Hello there!' })
+	})
+
     app.post('/sendpostdata', function (req, res) {
         console.log ("sendpostdata" ) 
         console.log ("contentA: " + req.body.contentA ) ;
@@ -162,6 +166,8 @@ module.exports = function (app) {
     });
 
     app.post('/Ajax_RequestJSONElement', Ajax_RequestJSONElement);
+    app.post('/ajaxtrigger', ajaxtrigger);
+    
    // 
 //
 };
@@ -169,6 +175,18 @@ module.exports = function (app) {
 function Ajax_RequestJSONElement(req,res)
 {
     console.log("# serverajaxcalls::Ajax_RequestJSONElement : " + req.body.REQUEST);
+
+    //var dataSection = paramscode.findlevel1(req.body.REQUEST);
+
+    res.contentType('json');
+    //res.send({ data: dataSection });
+    res.send({ data: "Done" });
+
+}
+
+function ajaxtrigger(req,res)
+{
+    console.log("# serverajaxcalls::ajaxtrigger : " + req.body.REQUEST);
 
     //var dataSection = paramscode.findlevel1(req.body.REQUEST);
 
