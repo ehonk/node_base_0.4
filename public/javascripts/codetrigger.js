@@ -1,5 +1,5 @@
 
-function loadpage_trigger() {
+function loadpage_highchart() {
 
 
     $("#objbtn_ajaxtrig").click(function(){
