@@ -158,6 +158,14 @@ module.exports = function (app) {
 	  res.render('pugUI/bs_myUI_pug_trigger', { title: 'Hey', message: 'Hello there!' })
 	})
 
+    app.get('/bs_myUI_pug_tcp', function (req, res) {
+	  res.render('pugUI/bs_myUI_pug_tcp', { title: 'Hey', message: 'Hello there!' })
+	})
+
+    app.get('/bs_myUI_pug_highchart', function (req, res) {
+	  res.render('pugUI/bs_myUI_pug_highchart', { title: 'Hey', message: 'Hello there!' })
+	})
+
     app.post('/sendpostdata', function (req, res) {
         console.log ("sendpostdata" ) 
         console.log ("contentA: " + req.body.contentA ) ;
