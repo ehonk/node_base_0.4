@@ -10,7 +10,14 @@ block content
       li.active
         i.fa.fa-dashboard
         |  Dashboard
+          form(action='/sendpostdata', method='post')
+            input#objhidden(type='hidden',  name='submitfrom', value='')
 
+            table
+              tr
+              
+            div#hcGraph
+            
   block scripts
     script(type="text/javascript").
       $(function() { loadpage_highchart();  })
