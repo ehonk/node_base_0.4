@@ -176,6 +176,23 @@ module.exports = function (app) {
     app.post('/Ajax_RequestJSONElement', Ajax_RequestJSONElement);
     app.post('/ajaxtrigger', ajaxtrigger);
     
+    app.post('/ax_tcpserver', function (req, res) {
+        console.log ("ax_tcpserver" ) 
+    });
+    
+    app.post('/ax_tcpclient', function (req, res) {
+        console.log ("ax_tcpclient" ) 
+    });
+    
+    app.post('/srvndtrigger', function (req, res) {
+        console.log ("srvndtrigger" ) 
+    });
+    app.post('/srvajaxtrigger', function (req, res) {
+        console.log ("srvajaxtrigger" ) 
+    });
+    
+    
+    
    // 
 //
 };

@@ -24,13 +24,17 @@ block content
                 td(style='width:200px;')
                 td(style='width:200px;')
                   div(style='float:right;margin-top:15px')
-                    input#objbtn_ajaxtrig(type='button',  value='Ajax Trigger', name='submitlogging', style='width:150px')
+                    input#btn_axtrig(type='button',  value='Ajax Trigger', name='submitlogging', style='width:150px')
               tr
                 td(style='width:200px;')
                 td(style='width:200px;')
                   div(style='float:right;margin-top:15px')
-                    input#objbtn_nodetrig(type='button',  value='Node Trigger', name='submitlogging', style='width:150px')
-
+                    input#btn_srvnodetrig(type='button',  value='Backend Node Trigger', name='submitlogging', style='width:150px')
+              tr
+                td(style='width:200px;')
+                td(style='width:200px;')
+                  div(style='float:right;margin-top:15px')
+                    input#btn_srvajaxtrig(type='button',  value='Backend Ajax Trigger', name='submitlogging', style='width:150px')
   block scripts
     script(type="text/javascript").
       $(function() { loadpage_trigger();  })
