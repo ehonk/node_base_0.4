@@ -5,7 +5,7 @@
 //var Todo = require('./models/todo');  
 var Todo = require('../models/todo');
 var mLogger = require('../app/mongoLogger');            // load the MongoLogger
-
+var ntriggers = require('../app/triggers');            // load the MongoLogger
 var conjson;
 //var contentfile = __dirname + '/data/data.json';
 var contentfile = '/home/pi/coding_node/node_base_0.4/data/data.json';
@@ -174,7 +174,7 @@ module.exports = function (app) {
     });
 
     app.post('/Ajax_RequestJSONElement', Ajax_RequestJSONElement);
-    app.post('/ajaxtrigger', ajaxtrigger);
+    
     
     app.post('/ax_tcpserver', function (req, res) {
         console.log ("ax_tcpserver" ) 
@@ -184,18 +184,21 @@ module.exports = function (app) {
         console.log ("ax_tcpclient" ) 
     });
     
-    app.post('/srvndtrigger', function (req, res) {
-        console.log ("srvndtrigger" ) 
-    });
-    app.post('/srvajaxtrigger', function (req, res) {
-        console.log ("srvajaxtrigger" ) 
-    });
     
+    app.post('/claxtrigger', ntriggers.claxtrigger);
     
+    app.post('/nclaxtrigger', ntriggers.nclaxtrigger);
     
-   // 
-//
+    app.post('/srvndtrigger', ntriggers.srvndtrigger);
+    
+    app.post('/srvajaxtrigger', ntriggers.srvajaxtrigger);
+    
+
+
+
 };
+
+
 
 function Ajax_RequestJSONElement(req,res)
 {
@@ -209,8 +212,22 @@ function Ajax_RequestJSONElement(req,res)
 
 }
 
+function najaxtrigger(req,res)
+{
+	console.log("# Timer Client Ajax Trigger");
+    console.log("# serverajaxcalls::ajaxtrigger : " + req.body.REQUEST);
+
+    //var dataSection = paramscode.findlevel1(req.body.REQUEST);
+
+    res.contentType('json');
+    //res.send({ data: dataSection });
+    res.send({ data: "Done" });
+
+}
+
 function ajaxtrigger(req,res)
 {
+	console.log("# Single Client Ajax Trigger");
     console.log("# serverajaxcalls::ajaxtrigger : " + req.body.REQUEST);
 
     //var dataSection = paramscode.findlevel1(req.body.REQUEST);
