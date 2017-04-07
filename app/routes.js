@@ -185,14 +185,15 @@ module.exports = function (app) {
     });
     
     
+    app.post('/clsimpleajax', ntriggers.clsimpleajax);
     app.post('/claxtrigger', ntriggers.claxtrigger);
-    
     app.post('/nclaxtrigger', ntriggers.nclaxtrigger);
     
     app.post('/srvndtrigger', ntriggers.srvndtrigger);
+    app.post('/nsrvndtrigger', ntriggers.nsrvndtrigger);
     
     app.post('/srvajaxtrigger', ntriggers.srvajaxtrigger);
-    
+    app.post('/nsrvajaxtrigger', ntriggers.nsrvajaxtrigger);
 
 
 

@@ -14,12 +14,17 @@ block content
 
             table
               tr
-                td(style='width:200px;') content A
+                td(style='width:200px;') Node Answer
                 td
-                  input(type='text',  name='contentA', id='contentA', value='')
+                  input(type='text',  name='nodeanswer', id='nodeanswer', value='')
 
 
             table(style='border-collapse:collapse;')
+              tr
+                td(style='width:200px;')
+                td(style='width:200px;')
+                  div(style='float:right;margin-top:15px')
+                    input#btn_simpleajax(type='button',  value='Simple Ajaxo without Answer', name='submitlogging', style='width:150px')            
               tr
                 td(style='width:200px;')
                 td(style='width:200px;')
@@ -34,12 +39,22 @@ block content
                 td(style='width:200px;')
                 td(style='width:200px;')
                   div(style='float:right;margin-top:15px')
-                    input#btn_srvnodetrig(type='button',  value='Backend Node Trigger', name='submitlogging', style='width:150px')
+                    input#btn_srvnodetrig(type='button',  value='Backend Single Node Trigger', name='submitlogging', style='width:150px')
               tr
                 td(style='width:200px;')
                 td(style='width:200px;')
                   div(style='float:right;margin-top:15px')
-                    input#btn_srvajaxtrig(type='button',  value='Backend Ajax Trigger', name='submitlogging', style='width:150px')
+                    input#btn_nsrvnodetrig(type='button',  value='Backend Timer Node Trigger', name='submitlogging', style='width:150px')                    
+              tr
+                td(style='width:200px;')
+                td(style='width:200px;')
+                  div(style='float:right;margin-top:15px')
+                    input#btn_srvajaxtrig(type='button',  value='Backend Single Ajax Trigger', name='submitlogging', style='width:150px')
+              tr
+                td(style='width:200px;')
+                td(style='width:200px;')
+                  div(style='float:right;margin-top:15px')
+                    input#btn_nsrvajaxtrig(type='button',  value='Backend Timer Ajax Trigger', name='submitlogging', style='width:150px')                    
   block scripts
     script(type="text/javascript").
       $(function() { loadpage_trigger();  })
