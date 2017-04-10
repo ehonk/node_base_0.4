@@ -185,6 +185,7 @@ module.exports = function (app) {
     });
     
     
+    app.post('/protoaxtrig', ntriggers.protoaxtrig);
     app.post('/clsimpleajax', ntriggers.clsimpleajax);
     app.post('/claxtrigger', ntriggers.claxtrigger);
     app.post('/nclaxtrigger', ntriggers.nclaxtrigger);

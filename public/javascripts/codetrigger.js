@@ -7,9 +7,16 @@ function loadpage_trigger() {
         ax_01_simpleajax();
     });
 	
+    $("#btn_protoaxtrig").click(function(){
+        ax_01_protoaxtrig();
+    });
+
     $("#btn_claxtrig").click(function(){
         ax_01_clsendtrigger();
     });
+
+    
+
     $("#btn_nclaxtrig").click(function(){
     	ax_01_nclsendtrigger();
     });
@@ -28,6 +35,39 @@ function loadpage_trigger() {
     $("#btn_nsrvajaxtrig").click(function(){
         ax_01_nsrvajaxtrigger();
     });
+}
+
+
+function ax_01_protoaxtrig(){
+
+    var strData = JSON.stringify({REQUEST: "IOBoard"});
+
+    $.ajax({
+        url: "/protoaxtrig",
+        type: "POST",
+        dataType: "json",
+        data: strData,
+        contentType: "application/json",
+        cache: false,
+        timeout: 1000,
+        complete: function()
+        {
+          //called when complete
+//          console.info('process complete');
+        },
+        success: function(data)
+        {
+//            loadOverviewSystemMessages_01_AnalogIn(data.data, SystemMessage);
+           // loadOverviewSystemMessages_02_preLoadCommunication(data.data, SystemMessage);
+//            IO_Environment(data.data );
+
+            $("#nodeanswer").val( data.data  );
+        },
+        error: function(jqXHR, textStatus, err)
+        {
+            console.info('error complete');
+        }
+      });
 }
 
 function ax_01_simpleajax(){
@@ -190,7 +230,8 @@ function ax_01_nsrvajaxtrigger(){
 //            loadOverviewSystemMessages_01_AnalogIn(data.data, SystemMessage);
            // loadOverviewSystemMessages_02_preLoadCommunication(data.data, SystemMessage);
 //            IO_Environment(data.data );
-            alert ("data.data");
+            //alert ("data.data");
+            $("#nodeanswer").val( data.data  );
 
         },
         error: function(jqXHR, textStatus, err)
@@ -223,7 +264,7 @@ function ax_01_clsendtrigger(){
            // loadOverviewSystemMessages_02_preLoadCommunication(data.data, SystemMessage);
 //            IO_Environment(data.data );
 
-            $("#nodeanswer").val("Node Answer Success");
+            $("#nodeanswer").val( data.data  );
         },
         error: function(jqXHR, textStatus, err)
         {
@@ -255,7 +296,7 @@ function ax_01_nclsendtrigger(){
 //            loadOverviewSystemMessages_01_AnalogIn(data.data, SystemMessage);
            // loadOverviewSystemMessages_02_preLoadCommunication(data.data, SystemMessage);
 //            IO_Environment(data.data );
-            alert ("data.data");
+            $("#nodeanswer").val( data.data  );
 
         },
         error: function(jqXHR, textStatus, err)
