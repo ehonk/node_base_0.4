@@ -32,12 +32,17 @@ function claxtrigger(req,res) {
 }
 function nclaxtrigger(req,res) {
 	console.log ("Client Timer Ajax Trigger" ) ;
+   
+	setTimeout( function(){ sendAjax(res); } , 1000);
 
+}
+
+function sendAjax(res){
+	
     res.contentType('json');
     //res.send({ data: dataSection });
 	//new Date().getTime();
     res.send({ data: "Hello from Nodes | Client Timer Ajax" });
-
 }
 
 function srvajaxtrigger(req,res) {
