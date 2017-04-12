@@ -35,10 +35,13 @@ function nclaxtrigger(req,res) {
    
 	setTimeout( function(){ sendAjax(res); } , 1000);
 
+	setTimeout( function(){ sendAjax(res); } , 3000);
+
 }
 
 function sendAjax(res){
 	
+	console.log ("sendAjax" ) ;
     res.contentType('json');
     //res.send({ data: dataSection });
 	//new Date().getTime();

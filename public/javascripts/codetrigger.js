@@ -285,7 +285,7 @@ function ax_01_nclsendtrigger(){
         data: strData,
         contentType: "application/json",
         cache: false,
-        timeout: 1000,
+        timeout: 5000,
         complete: function()
         {
           //called when complete
