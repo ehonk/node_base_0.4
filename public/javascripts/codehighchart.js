@@ -1,7 +1,7 @@
 
 function loadpage_highchart() {
 
-	alert ("loadpage_highchart Done");
+
     $("#objbutton_post").click(function(){
 	    alert ("objbutton_post Done");
 
@@ -10,7 +10,20 @@ function loadpage_highchart() {
 
     });
 
+    hc_enviroment();
+
 }
+
+function hc_enviroment(){
+
+	//alert ("hc_enviroment Done");
+
+
+    var HCObjOptions = loadCleanDummySimple('hcGraph');
+    var HCObject= new Highcharts.StockChart(HCObjOptions);
+
+}
+
 
 function jsonProfiler_02_loadHighcharts() {
 
@@ -28,22 +41,16 @@ function jsonProfiler_02_loadHighcharts() {
 
 function loadCleanDummySimple(renderTo){
 
-
-    var bgcolor='#' + $("#objbgcolor").val ();
-//	console.info ("loadCleanDummySimple bgcolor: " + bgcolor);
-
+    
     simpleOptions = {
 
               chart: {
                 renderTo: renderTo,
-                backgroundColor: bgcolor,
+                backgroundColor: 'grey',
                  type: 'spline'
               },
               title: {
                   text: ''
-              },
-              exporting: {
-                  enabled: true
               },
               legend: {
                   enabled: true,
@@ -56,9 +63,6 @@ function loadCleanDummySimple(renderTo){
               rangeSelector: {
                   enabled: false
               },
-              credits: {
-                  enabled: false
-                },
           tooltip: {
             pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}<br/>',
             valueDecimals: 2
