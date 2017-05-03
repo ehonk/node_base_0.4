@@ -19,9 +19,32 @@ function hc_enviroment(){
 	//alert ("hc_enviroment Done");
 
 
-    var HCObjOptions = loadCleanDummySimple('hcGraph');
-    var HCObject= new Highcharts.StockChart(HCObjOptions);
+//    var HCObjOptions = loadCleanDummySimple('hcGraph');
+  //  var HCObject= new Highcharts.StockChart(HCObjOptions);
 
+    var myChart = Highcharts.chart('hcGraph', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Fruit Consumption'
+        },
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit eaten'
+            }
+        },
+        series: [{
+            name: 'Jane',
+            data: [1, 0, 4]
+        }, {
+            name: 'John',
+            data: [5, 7, 3]
+        }]
+    });
 }
 
 

@@ -55,12 +55,16 @@ module.exports = function (app) {
 
 
     // ############ pure html send ############
+    // hgichart
+    app.get('/html_highchart', function (req, res) {
+        console.log("< Info > GET Slash Call");
+        res.sendfile('./views/others/html_highchart.html'); // load the single view file (angular will handle the page changes on the front-end)
+    }); 
     // bs_min
     app.get('/bs_min', function (req, res) {
         console.log("< Info > GET Slash Call");
         res.sendfile('./views/others/bs_min.html'); // load the single view file (angular will handle the page changes on the front-end)
     }); 
-
     // bs_dashboard_index
     app.get('/bs_dashboard_index', function (req, res) {
         console.log("< Info > GET Slash Call");
@@ -111,6 +115,10 @@ module.exports = function (app) {
         res.sendfile('./views/index.html'); // load the single view file (angular will handle the page changes on the front-end)
     }); 
 
+
+    app.get('/pugindex', function (req, res) {
+    	res.render('jadepug/pugindex', { title: 'Hey', message: 'Hello there!' })
+    })
 
     app.get('/pugindex', function (req, res) {
     	res.render('jadepug/pugindex', { title: 'Hey', message: 'Hello there!' })
